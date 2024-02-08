@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx watch src/http/server.ts"
+    "dev": "tsx watch src/http/server.ts",
+    "services:up": "docker compose up -d"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +18,7 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
+    "@fastify/cookie": "^9.3.1",
     "@prisma/client": "^5.9.1",
     "fastify": "^4.26.0",
     "zod": "^3.22.4"

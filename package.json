@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx watch src/http/server.ts",
+    "dev": "npm run services:up && tsx watch src/http/server.ts",
     "services:up": "docker compose up -d"
   },
   "keywords": [],
@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@fastify/cookie": "^9.3.1",
+    "@fastify/websocket": "^8.3.1",
     "@prisma/client": "^5.9.1",
     "fastify": "^4.26.0",
     "ioredis": "^5.3.2",

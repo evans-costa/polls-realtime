@@ -8,6 +8,7 @@ import { voteOnPoll } from "./routes/vote-on-poll";
 import { pollResults } from "./ws/poll-results";
 
 const app = fastify();
+const PORT = process.env.PORT || 3000;
 
 app.register(cookie, {
   secret: process.env.SECRET_KEY,
@@ -25,6 +26,6 @@ app.register(getPoll);
 app.register(voteOnPoll);
 app.register(pollResults);
 
-app.listen({ port: 3333 }).then(() => {
+app.listen({ port: Number(PORT) }).then(() => {
   console.log(`Server is running...`);
 });

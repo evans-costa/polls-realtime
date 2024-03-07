@@ -27,10 +27,10 @@
 ## Key Features
 
 - Create a poll with title and the options to vote using PostgreSQL with Prisma as a ORM.
-- Get the poll created with number of votes of each poll.
+- Get the poll created with number of votes ranked.
 - Voting on a poll, the number of each votes will be stored using Redis as a database.
 - When accessing the WebSocket endpoint, you will subscribe to the results of this poll.
-- Everytime you vote, if a WebSocket connection is estabilished, you get the result in real time.
+- Everytime you vote, if a WebSocket connection is estabilished, all subscribers get the results in real time.
 
 ## Motivation
 

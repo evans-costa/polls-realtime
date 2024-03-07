@@ -74,16 +74,16 @@ How real-time communication works is important, many modern applications and ser
   # Run the project
   $ npm run dev
   ```
-
-- This will up a Redis container and a PostgreSQL container on your Docker installation.
-- If you would like to access the database, Prisma comes with a built-in GUI to view and edit the data on your database, from your command line:
+  This will up a Redis and a PostgreSQL container on your Docker installation.
+  
+- If you would like to access the database by a GUI, Prisma comes with a built-in GUI to view and edit the data, from your command line:
 
   ```bash
   # Access the Prisma Studio
   $ npx prisma studio
   ```
 
-- Now you can test it in you favorite API Testing Platform ([Insomnia](https://insomnia.rest/download), [Postman](https://www.postman.com/), [Hoppscotch](https://hoppscotch.io/))
+- Now you can test it in your favorite API Testing Platform ([Insomnia](https://insomnia.rest/download), [Postman](https://www.postman.com/), [Hoppscotch](https://hoppscotch.io/))
 
 ### HTTP endpoints
 
@@ -98,20 +98,20 @@ How real-time communication works is important, many modern applications and ser
 
   - Request Body:
 
-  ```json
-  {
-    "title": "Qual melhor framework web para NodeJS?",
-    "options": ["Express", "Fastify"]
-  }
-  ```
+    ```json
+    {
+      "title": "Qual melhor framework web para NodeJS?",
+      "options": ["Express", "Fastify"]
+    }
+    ```
 
-  - Response Body
+  - Response Body: 
 
-  ```json
-  {
-    "pollId": "194cef63-2ccf-46a3-aad1-aa94b2bc89b0"
-  }
-  ```
+    ```json
+    {
+      "pollId": "194cef63-2ccf-46a3-aad1-aa94b2bc89b0"
+    }
+    ```
 
   #### Creating a vote on a poll:
 
@@ -121,11 +121,11 @@ How real-time communication works is important, many modern applications and ser
 
   - Request Body:
 
-  ```json
-  {
-    "pollOptionId": "c5271ca0-3c5b-4a81-af94-284bfbfd49b1"
-  }
-  ```
+    ```json
+    {
+      "pollOptionId": "c5271ca0-3c5b-4a81-af94-284bfbfd49b1"
+    }
+    ```
 
   #### Get a poll by its ID:
 
@@ -135,26 +135,26 @@ How real-time communication works is important, many modern applications and ser
 
   - Response Body:
 
-  ```json
-  {
-    "poll": {
-      "id": "194cef63-2ccf-46a3-aad1-aa94b2bc89b0",
-      "title": "Qual a melhor framework web para NodeJS?",
-      "options": [
-        {
-          "id": "c5271ca0-3c5b-4a81-af94-284bfbfd49b1",
-          "title": "Express",
-          "score": 2
-        },
-        {
-          "id": "780b8e25-a40e-4301-ab32-77ebf8c79da8",
-          "title": "Fastify",
-          "score": 1
-        }
-      ]
+    ```json
+    {
+      "poll": {
+        "id": "194cef63-2ccf-46a3-aad1-aa94b2bc89b0",
+        "title": "Qual a melhor framework web para NodeJS?",
+        "options": [
+          {
+            "id": "c5271ca0-3c5b-4a81-af94-284bfbfd49b1",
+            "title": "Express",
+            "score": 2
+          },
+          {
+            "id": "780b8e25-a40e-4301-ab32-77ebf8c79da8",
+            "title": "Fastify",
+            "score": 1
+          }
+        ]
+      }
     }
-  }
-  ```
+    ```
 
 ### WebSocket endpoint
 

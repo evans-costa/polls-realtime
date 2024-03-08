@@ -58,29 +58,43 @@ How real-time communication works is important, many modern applications and ser
   ```env
   PORT=
 
-  POSTGRES_USER=
-  POSTGRES_PASSWORD=
+  POSTGRES_USER=local_user
+  POSTGRES_PASSWORD=local_password
   POSTGRES_DB=polls
   POSTGRES_HOST=localhost
   POSTGRES_PORT=54325
-  DATABASE_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}?schema=public
+
+  DATABASE_URL=postgresql://local_user:local_password@localhost:54325/polls?schema=public
 
   SECRET_KEY=
   ```
 
-- To run the project, run the following command:
+- Run the command to up Postgres and Redis containers:
 
+  ```bash
+  # Up the containers
+  $ npm run services:up
+  ```
+
+  This will up a Redis and a PostgreSQL container on your Docker installation.
+
+- Run the Prisma migrations:
+
+  ```bash
+  # Run the migrations
+  $ npm run migrate:dev
+  ```
+
+- Run the server:
   ```bash
   # Run the project
   $ npm run dev
   ```
-  This will up a Redis and a PostgreSQL container on your Docker installation.
-  
 - If you would like to access the database by a GUI, Prisma comes with a built-in GUI to view and edit the data, from your command line:
 
   ```bash
   # Access the Prisma Studio
-  $ npx prisma studio
+  $ npm run prisma:studio
   ```
 
 - Now you can test it in your favorite API Testing Platform ([Insomnia](https://insomnia.rest/download), [Postman](https://www.postman.com/), [Hoppscotch](https://hoppscotch.io/))
@@ -105,7 +119,7 @@ How real-time communication works is important, many modern applications and ser
     }
     ```
 
-  - Response Body: 
+  - Response Body:
 
     ```json
     {

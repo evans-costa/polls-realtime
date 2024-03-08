@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run services:up && tsx watch src/http/server.ts",
-    "services:up": "docker compose up -d"
+    "dev": "tsx watch src/http/server.ts",
+    "migrate:dev": "npx prisma migrate dev",
+    "services:up": "docker compose up -d",
+    "prisma:studio": "npx prisma studio"
   },
   "keywords": [],
   "author": "",

@@ -1,12 +1,14 @@
-version: '3.7'
+version: "3.7"
 
 services:
   postgres:
     image: bitnami/postgresql:latest
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
     ports:
-      - '54325:5432'
-    env_file:
-      - ./.env
+      - "${POSTGRES_PORT_NUMBER}:5432"
     volumes:
       - polls_pg_data:/bitnami/postgresql
 
@@ -15,9 +17,9 @@ services:
     environment:
       - ALLOW_EMPTY_PASSWORD=yes
     ports:
-      - '6379:6379'
+      - "6379:6379"
     volumes:
-      - 'polls_redis_data:/bitnami/redis/data'
+      - "polls_redis_data:/bitnami/redis/data"
 
 volumes:
   polls_pg_data:

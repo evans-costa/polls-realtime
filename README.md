@@ -56,17 +56,16 @@ How real-time communication works is important, many modern applications and ser
 - Rename the `.env.example` file to `.env` and fill it accordingly:
 
   ```env
-  PORT=
+  PORT=<YOUR_PORT>
 
   POSTGRES_USER=local_user
   POSTGRES_PASSWORD=local_password
   POSTGRES_DB=polls
-  POSTGRES_HOST=localhost
-  POSTGRES_PORT=54325
+  POSTGRES_PORT_NUMBER=54325
 
   DATABASE_URL=postgresql://local_user:local_password@localhost:54325/polls?schema=public
 
-  SECRET_KEY=
+  SECRET_KEY=<YOUR_SECRET_KEY>
   ```
 
 - Run the command to up Postgres and Redis containers:
